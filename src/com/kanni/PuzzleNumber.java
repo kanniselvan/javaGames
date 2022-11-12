@@ -176,16 +176,20 @@ public class PuzzleNumber {
 
     class WindowAction extends WindowAdapter {
         public void windowClosing(WindowEvent we) {
-            String[] select = {"Minesweeper","New", "Exit"};
+            String[] select = {"Minesweeper","Chess","New", "Exit"};
             int option = JOptionPane.showOptionDialog(f1, "You Choose One Games?", "Choose the Games", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, select, "New");
             if (option == 0) {
                 f1.dispose();
                 new Minesweeper();
-            } else if (option == 1) {
+            }else if (option == 1) {
+                f1.dispose();
+                new ChessGame();
+            } else if (option == 2) {
                 f1.dispose();
                 new PuzzleNumber();
-            } else
+            } else {
                 System.exit(0);
+            }
         }
     }
 

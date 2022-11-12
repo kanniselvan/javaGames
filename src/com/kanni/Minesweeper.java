@@ -59,7 +59,7 @@ public class Minesweeper {
     JMenuBar mb;
     JMenu game, help;
     JMenuItem g1, g2, g3, g4, g5, pm;
-    JCheckBoxMenuItem c2, c4, c5;
+    JCheckBoxMenuItem c1,c2, c4, c5;
     Font font = new Font("Serief", Font.BOLD, 25);
     Font fff = new Font("Serief", Font.BOLD, 15);
 
@@ -76,7 +76,8 @@ public class Minesweeper {
         f.setJMenuBar(mb);
         game = new JMenu("Menu");
         g1 = new JMenuItem("New ");
-        c2 = new JCheckBoxMenuItem("puzzle.. ");
+        c1 = new JCheckBoxMenuItem("Chess");
+        c2 = new JCheckBoxMenuItem("Puzzle");
         g2 = new JMenuItem("Custom");
         g3 = new JMenuItem("Color");
         g4 = new JMenuItem("Best Time");
@@ -84,6 +85,7 @@ public class Minesweeper {
         game.add(g1);
         game.addSeparator();
         game.add(g2);
+        game.add(c1);
         game.add(c2);
         game.addSeparator();
         game.add(g3);
@@ -246,6 +248,7 @@ public class Minesweeper {
         g3.addActionListener(new ButtonAction());
         g4.addActionListener(new ButtonAction());
         g5.addActionListener(new ButtonAction());
+        c1.addActionListener(new ButtonAction());
         c2.addActionListener(new ButtonAction());
         h1.addActionListener(new ButtonAction());
         h2.addActionListener(new ButtonAction());
@@ -273,6 +276,10 @@ public class Minesweeper {
             if (ae.getSource() == c2) {
                 f.dispose();
                 new PuzzleNumber();
+            }
+            if (ae.getSource() == c1) {
+                f.dispose();
+                new ChessGame();
             }
 
             if (ae.getSource() == g3) {
